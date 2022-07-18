@@ -108,3 +108,21 @@ class Actor:
             font_size (int): The given font size.
         """
         self._font_size = font_size
+
+    def set_text(self, text):
+        """
+        Updates the text to the given value.
+
+        Args:
+            text(string): The given value.
+        """
+        self._text = text
+
+    def set_velocity(self, velocity):
+        """
+        Updates the velocity to the given one.
+
+        Args:
+            velocity (Point): The given velocity.
+        """
+        self._velocity = velocity
