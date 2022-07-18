@@ -40,7 +40,7 @@ class Script:
         """
         results = []
         if group in self._actions.keys():
-            results = self.actions[group].copy()
+            results = self._actions[group].copy()
         return results
 
     def remove_action(self, group, action):
@@ -48,8 +48,8 @@ class Script:
         Removes an action from the given group.
 
         Args:
-            group (string) The name of the group.
-            action (Action) The action to remove.
+            group (string)  : The name of the group.
+            action (Action) : The action to remove.
         """
         if group in self._actions:
             self._actions[group].remove(action)
