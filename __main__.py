@@ -25,4 +25,33 @@ def main():
     cycle_one.set_name(cycle_one_name)
     cycle_two.set_name(cycle_two_name)
 
-    
+    # Create the cast
+    cast = Cast()
+    score1 = Score()
+    score2 = Score()
+    score1.set_position(Point(constants.MAX_X - 850, 0))
+    score2.set_position(Point(constants.MAX_X - 200, 0))
+    score1.add_points(3)
+    score2.add_points(3)
+    score1.set_player_name(cycle_one_name)
+    score2.set_player_name(cycle_two_name)
+    cast.add_actor("cycle_one", cycle_one)
+    cast.add_actor("cycle_two", cycle_two)
+    cast.add_actor("score1", score1)
+    cast.add_actor("score2", score2)
+
+    # Start the game
+    keyboard_service = KeyboardService()
+    video_service = VideoService()
+
+    script = Script()
+    script.add_action("input", ControlActorsAction(keyboard_service))
+    script.add_action("update", HandleCollisionsAction())
+    script.add_action("update", MoveActorsAction())
+    script.add_action("output", DrawActorsAction(video_service))
+
+    director = Director(video_service)
+    director.start_game(cast, script)
+
+if __name__ == "__main__":
+    main()
