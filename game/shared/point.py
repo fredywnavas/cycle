@@ -47,5 +47,39 @@ class Point:
         return self._x == other.get_x() and self._y == other.get_y()
 
     def get_x(self):
+        """ 
+        Gets the horizontal distance.
+
+        Returns:
+            integer: The horizontal distance.
         """
+        return self._x
+
+    def get_y(self):
         """
+        Gets the vertical distance.
+        Returns:
+            integer: The vertical distance.
+        """
+        return self._y
+
+    def reverse(self):
+        """
+        Reverses the point by inverting both x and y values.
+        Returns:
+            Point: A new point that is reversed.
+        """
+        new_x = self._x * -1
+        new_y = self._y * -1
+
+        return Point(new_x, new_y)
+
+    def scale(self, factor):
+        """
+        Scales the point by the provided factor.
+        Args:
+            factor (int): The amount to scale.
+        Return:
+            Point: A new Point that is scaled.
+        """
+        return Point(self._x * factor, self._y * factor)
