@@ -79,7 +79,7 @@ class HandleCollisionsAction(Action):
                     self._game_over_message = f"{cycle_one.get_name()} wins!"
                     self._is_game_over = True
 
-            # If cycle_one hits is own wall then displays cycle_two wins
+            # If cycle_one hits its own wall then displays cycle_two wins
             if cycle_one_head.get_position().equals(segment_one.get_position()):
                 score1.reduce_points()
                 if score1.get_points() < 1:
