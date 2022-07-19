@@ -23,5 +23,7 @@ Cycle is played according to the following rules:
 ## Authors
 
 Fredy Navas
+
 nav21002@byu.edu
+
 fredywnavas@gmail.com
