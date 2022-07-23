@@ -9,10 +9,10 @@ class DrawActorsAction(Action):
     Attributes:
         _video_service (VideoService): An instance of VideoService.
     """
-
     def __init__(self, video_service):
         """
         Constructs a new DrawActorsAction using the specified VideoService.
+       
         Args:
             video_service (VideoService): An instance of VideoService.
         """

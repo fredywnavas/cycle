@@ -1,6 +1,3 @@
-from unittest import result
-
-
 class Cast:
     """
     A collection of actors.

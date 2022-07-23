@@ -58,7 +58,7 @@ class Cycle(Actor):
             segment.move_next()
         
         #update velocities
-        for i in range(len(self._segments) -1, 0, -1):
+        for i in range(len(self._segments) - 1, 0, -1):
             trailing = self._segments[i]
             previous = self._segments[i - 1]
             velocity = previous.get_velocity()
@@ -142,6 +142,7 @@ class Cycle(Actor):
     def set_name(self, name):
         """
         Sets the name for each player.
+        
         Args:
             String: The players given name as text.
         """

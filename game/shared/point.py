@@ -8,7 +8,6 @@ class Point:
         _x (integer): The horizontal disatnce from the origin.
         _y (integer): The vertical distance from the origin.
     """
-
     def __init__(self, x, y):
         """
         Constructs a new Point using the specified x and y values.
@@ -26,6 +25,7 @@ class Point:
 
         Args:
             other (Point): The Point to add.
+        
         Returns:
             Point: A new Point that is the sum.
         """
@@ -58,6 +58,7 @@ class Point:
     def get_y(self):
         """
         Gets the vertical distance.
+        
         Returns:
             integer: The vertical distance.
         """
@@ -66,6 +67,7 @@ class Point:
     def reverse(self):
         """
         Reverses the point by inverting both x and y values.
+        
         Returns:
             Point: A new point that is reversed.
         """
@@ -77,8 +79,10 @@ class Point:
     def scale(self, factor):
         """
         Scales the point by the provided factor.
+        
         Args:
             factor (int): The amount to scale.
+        
         Return:
             Point: A new Point that is scaled.
         """

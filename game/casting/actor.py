@@ -104,6 +104,7 @@ class Actor:
     def set_font_size(self, font_size):
         """
         Updates the font size to the given one.
+        
         Args:
             font_size (int): The given font size.
         """

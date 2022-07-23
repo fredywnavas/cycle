@@ -5,7 +5,8 @@ from game.shared.point import Point
 class ControlActorsAction(Action):
     """
     An input action that controls the cycle.
-    The responsibility of ControlActorsAction is to get a direction and turn a cycle to move in that direction depending on the key a player presses.
+    The responsibility of ControlActorsAction is to get a direction and turn
+    a cycle to move in that direction depending on the key a player presses.
 
     Attributes:
         _keyboard_service (KeyboarService): An instance of KeyboardService.
@@ -53,7 +54,6 @@ class ControlActorsAction(Action):
         cycle_one = cast.get_first_actor("cycle_one")
         cycle_one.turn_cycle(self._cycle_one_direction)
 
-        
         # Cycle two keyboard inputs
 
         # left

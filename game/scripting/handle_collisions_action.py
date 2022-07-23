@@ -1,5 +1,4 @@
 import constants
-
 from game.scripting.action import Action
 from game.shared.point import Point
 from game.casting.game_over_message import GameOver
@@ -14,14 +13,12 @@ class HandleCollisionsAction(Action):
     Attributes:
         _is_game_over (boolean): Whether or not the game is over.
     """
-
     def __init__(self):
         """
         Constructs a new HandleCollisionsAction.
         """
         self._is_game_over = False
         self._game_over_message = ""
-
 
     def execute(self, cast, script):
         """
@@ -68,8 +65,7 @@ class HandleCollisionsAction(Action):
         segments_one = cycle_one.get_segments()[1:]
         segments_two = cycle_two.get_segments()[1:]
 
-        
-        # Finds which user winds and displays their name
+        # Finds which user wins and displays their name
 
         # If cycle_two hits cycle_one's wall then displays cycle_one wins
         for segment_one in segments_one:
@@ -101,8 +97,8 @@ class HandleCollisionsAction(Action):
                     self._game_over_message = f"{cycle_one.get_name()} wins!"
                     self._is_game_over = True
 
-        # If cycle_one hits cycle_two display cycle_two wins
-        if cycle_one_head.get_position().equals(cycle_one_head.get_position()):
+        # If cycle_one hits cycle_two display cycle_one wins
+        if cycle_one_head.get_position().equals(cycle_two_head.get_position()):
             score1.reduce_points()
             if score1.get_points() < 1:
                 self._game_over_message = f"{cycle_two.get_name()} wins!"
@@ -121,12 +117,11 @@ class HandleCollisionsAction(Action):
 
     def _handle_game_over(self, cast):
         """
-        Shows the "game over" message and turns both cycle white  if the game is over.
+        Shows the "game over" message and turns both cycles white  if the game is over.
 
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-
         # Gets position for gameover message
         x = int(constants.MAX_X / 2)
         y = int(constants.MAX_Y / 2)
@@ -140,12 +135,12 @@ class HandleCollisionsAction(Action):
             segments_one = cycle_one.get_segments()
             segments_two = cycle_two.get_segments()
 
-            # Creates game over message
+            # Creates gameover message
             game_over = GameOver()
             game_over.set_position(position)
             game_over.set_text(self._game_over_message)
             game_over.set_font_size(50)
-            cast.add_actor("message", game_over)
+            cast.add_actor("messages", game_over)
 
             # Changes color of cycles to white after the game ends
             for segment in segments_one:
