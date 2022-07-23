@@ -1,3 +1,4 @@
+from pickle import PicklingError
 from game.shared.color import Color
 
 COLUMNS = 40
@@ -13,6 +14,8 @@ WHITE = Color(255, 255, 255)
 RED = Color(255, 0, 0)
 YELLOW = Color(255, 255, 0)
 GREEN = Color(0, 255, 0)
+PINK = Color(255, 20, 147)
+CYAN = Color(0, 255, 255)
 
 # x component from where the score is displayed
 SCORE_X = 350
